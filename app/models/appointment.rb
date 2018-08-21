@@ -7,5 +7,4 @@ class Appointment < ApplicationRecord
   validates :date, presence: true
   validates :duration, presence: true
   validates :location, presence: true
-
 end
