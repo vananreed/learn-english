@@ -10,10 +10,55 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_21_085025) do
+ActiveRecord::Schema.define(version: 2018_08_21_103402) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "applications", force: :cascade do |t|
+    t.string "native_language"
+    t.integer "years_of_english", default: 0
+    t.text "past_experience", default: "0"
+    t.text "learning_goals"
+    t.string "topics_of_interest"
+    t.integer "age"
+    t.string "address"
+    t.string "gender"
+    t.bigint "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["student_id"], name: "index_applications_on_student_id"
+  end
+
+  create_table "appointments", force: :cascade do |t|
+    t.time "time"
+    t.date "date"
+    t.integer "duration"
+    t.string "topic"
+    t.string "location"
+    t.bigint "student_id"
+    t.bigint "teacher_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["student_id"], name: "index_appointments_on_student_id"
+    t.index ["teacher_id"], name: "index_appointments_on_teacher_id"
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_students_on_user_id"
+  end
+
+  create_table "teachers", force: :cascade do |t|
+    t.text "education"
+    t.integer "years_of_experience"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_teachers_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -30,4 +75,9 @@ ActiveRecord::Schema.define(version: 2018_08_21_085025) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "applications", "students"
+  add_foreign_key "appointments", "students"
+  add_foreign_key "appointments", "teachers"
+  add_foreign_key "students", "users"
+  add_foreign_key "teachers", "users"
 end
