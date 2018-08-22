@@ -1,23 +1,26 @@
 <div class="jumbotron">
+  <div class="container">
   <h1>Improve your Life, Learn English!</h1>
   <div class="subtitle">The world's most widely used language</div>
   <%= link_to "Book a lesson", new_appointment_path, class: "btn btn-primary" %>
+  </div>
 </div>
 <div class="container">
   <section class="why-learn-english">
     <div class="row">
       <div class="col-sm-12 col-md-4">
-        Reason to learn English
+        <h4>Join millions of other English Speakers</h4>
       </div>
       <div class="col-sm-12 col-md-4">
-        Reason to learn English
+        <h4>Improve yourself</h4>
       </div>
       <div class="col-sm-12 col-md-4">
-        Reason to learn English
+        <h4>Have some fun!</h4>
       </div>
     </div>
   </section>
   <section class="meet-your-teacher">
+    <h2>Meet your Teacher</h2>
     <div class="teacher-synopsis">
       <div class="row">
         <div class="col-sm-12 col-md-6">
@@ -82,5 +85,12 @@
       </div>
     </div>
     <%= link_to "Get started", new_appointment_path, class: "btn btn-primary" %>
+  </section>
+  <section class="signup-to-email-list">
+    <h3>Still not sure? Sign up for weekly English tips completely free!</h3>
+    <form action="/">
+      <input type="email" placeholder="your@email.here">
+      <input type="submit">
+    </form>
   </section>
 </div>
