@@ -7,7 +7,7 @@ h1 {
   h4 {
     text-align: center;
   }
-  margin: 10px 10px;
+  margin: 10px;
 }
 
 .subtitle {
@@ -30,4 +30,19 @@ h1 {
   font-size: 55px;
   text-align: center;
   color: orange;
+}
+
+.meet-your-teacher {
+  h2 {
+    font-size: 50px;
+    margin-top: 0px;
+  }
+  .teacher-synopsis {
+    padding: 25px;
+  }
+    background: white;
+    padding: 45px;
+    border: 1px solid orange;
+    border-radius: 10px;
+    margin: 35px 0;
 }
