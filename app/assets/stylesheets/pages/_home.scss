@@ -4,7 +4,10 @@ h1 {
 }
 
 .why-learn-english {
-
+  h4 {
+    text-align: center;
+  }
+  margin: 10px 10px;
 }
 
 .subtitle {
@@ -23,4 +26,8 @@ h1 {
   }
 }
 
-
+.selling-point-icon {
+  font-size: 55px;
+  text-align: center;
+  color: orange;
+}
