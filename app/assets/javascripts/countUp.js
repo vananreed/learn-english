@@ -259,7 +259,7 @@ return CountUp;
 
 function initCountUp() {
 
-  var numAnim = new CountUp("teaching-hours", 0, 1024);
+  var numAnim = new CountUp("teaching-hours", 0, 2056);
   window.addEventListener('scroll', () => {
       if (window.scrollY >= 500) {
         if (!numAnim.error) {
