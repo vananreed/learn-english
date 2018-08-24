@@ -33,6 +33,22 @@ h1 {
 }
 
 .meet-your-teacher {
+  h3 {
+    i {
+      font-size: 20px;
+      color: orange;
+    }
+
+  }
+  #teacher-profile {
+    margin-top:10px;
+    padding: 10px;
+    font-size: 1.7rem;
+    vertical-align: middle;
+  }
+  #image-container {
+    text-align: center;
+  }
   h2 {
     font-size: 50px;
     margin-top: 0px;
@@ -45,4 +61,7 @@ h1 {
     border: 1px solid orange;
     border-radius: 10px;
     margin: 35px 0;
+    font-size: 1.6rem;
 }
+
+
