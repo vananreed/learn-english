@@ -1,0 +1,21 @@
+.footer {
+  font-family: Georgia;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 25px;
+  background: white;
+  padding:30px;
+  border-top: 3px solid orange;
+  .weekly-email-tips {
+    margin-bottom: 10px;
+  }
+  .send-teacher-a-question {
+    margin-bottom: 7px;
+    i {
+      color: orange;
+      &:hover {
+        color: black;
+      }
+    }
+  }
+}
