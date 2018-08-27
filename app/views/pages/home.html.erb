@@ -54,6 +54,7 @@
       <%= link_to "Make an Appointment", new_appointment_path, class: "btn btn-primary" %>
   </section>
   <section class="how-it-works">
+    <div class="how-it-works-title">1, 2, 3... Go!</div>
     <div class="how-it-works-step step-one">
       <div class="row">
         <div class="col-sm-12 col-md-4">
@@ -68,23 +69,25 @@
     </div>
     <div class="how-it-works-step step-two">
       <div class="row">
-        <div class="col-sm-12 col-md-1"><span class="step-number-how-it-works">2</span></div>
-        <div class="col-sm-12 col-md-7">
-          <h2>Book an Appointment</h2>
-          <p>Check availability and book what time works best for you!</p>
+        <div class="col-sm-12 col-md-4 col-md-push-8">
+          <%= image_tag "calendar.jpeg", class: "step-image" %>
         </div>
-        <div class="col-sm-12 col-md-4">Picture</div>
+        <div class="col-sm-12 col-md-1 col-md-pull-4"><span class="step-number-how-it-works">2</span></div>
+        <div class="col-sm-12 col-md-7 col-md-pull-4">
+          <h2>Book an Appointment</h2>
+          <p>Check Abby's availability and book what time and lesson length works best for you!</p>
+        </div>
       </div>
     </div>
     <div class="how-it-works-step step-three">
       <div class="row">
         <div class="col-sm-12 col-md-4">
-          Picture
+          <%= image_tag "learn-english.jpeg", class: "step-image" %>
         </div>
         <div class="col-sm-12 col-md-1"><span class="step-number-how-it-works">3</span></div>
         <div class="col-sm-12 col-md-7">
           <h2>Learn English!</h2>
-          <p>The fun part! Meet with Abby and have some fun improving your English skills</p>
+          <p>The fun part! Chat with Abby and have some fun improving your English skills</p>
         </div>
       </div>
     </div>
