@@ -1,4 +1,5 @@
 class AppointmentsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:new]
 
   def index
     if current_user.teacher
@@ -9,7 +10,11 @@ class AppointmentsController < ApplicationController
   end
 
   def new
-    @student = current_user.student if current_user.student
+    if user_signed_in?
+      @student = current_user.student if current_user.student
+    else
+      @student = Student.new
+    end
     @appointment = Appointment.new
   end
 
