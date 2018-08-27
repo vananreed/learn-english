@@ -2,7 +2,7 @@
   <div class="container">
   <h1>Improve your Life, Learn English with Abby!</h1>
   <div class="subtitle">Practice the world's most widely spoken language with your very own private tutor</div>
-  <%= link_to "Book a lesson", new_appointment_path, class: "btn btn-primary" %>
+  <%= link_to "Book a lesson", new_appointment_path, class: "btn btn-primary btn-lg" %>
   </div>
 </div>
 <div class="container">
@@ -23,7 +23,7 @@
     </div>
   </section>
   <section class="meet-your-teacher">
-    <h2>Meet your Teacher</h2>
+    <h2 class="text-center">Meet your Teacher</h2>
     <div class="teacher-synopsis">
       <div class="row">
         <div class="col-sm-12 col-md-6" id="image-container">
@@ -31,7 +31,7 @@
           <h3 class="text-center">Abby Arend</h3>
         </div>
         <div class="col-sm-12 col-md-6">
-          <p id="teacher-profile">Abby is a TEFL Certified English Teacher with over 1000 hours of teaching. With a compelling background teaching refugees abroad, volunteering at Service Overseas in Solidarity, tutoring ESL students and working as an English to teacher to Chinese students online, Abby is well adept in teaching people of all backgrounds and cultures. As she travels and teaches around the world, she understands the benefits of sharing a common language in order for everyone's voices to be heard. She is passionate about education and is eager to help you on your journey to learn English.</p>
+          <p id="teacher-profile">Abby is a TEFL Certified English Teacher with over 2000 hours of teaching. With a compelling background teaching refugees abroad, volunteering at Service Overseas in Solidarity, tutoring ESL students and working as an English to teacher to Chinese students online, Abby is well adept in teaching people of all backgrounds and cultures. As she travels and teaches around the world, she understands the benefits of sharing a common language in order for everyone's voices to be heard. She is passionate about education and is eager to help you on your journey to learn English.</p>
         </div>
       </div>
     </div>
@@ -51,7 +51,9 @@
         </div>
       </div>
     </div>
-      <%= link_to "Make an Appointment", new_appointment_path, class: "btn btn-primary" %>
+      <div class="text-center">
+        <%= link_to "Book a Lesson", new_appointment_path, class: "btn btn-primary btn-lg" %>
+      </div>
   </section>
   <section class="how-it-works">
     <div class="how-it-works-title">1, 2, 3... Go!</div>
@@ -91,7 +93,9 @@
         </div>
       </div>
     </div>
-    <%= link_to "Get started", new_appointment_path, class: "btn btn-primary" %>
+    <div class="text-center">
+      <%= link_to "Get started", new_appointment_path, class: "btn btn-primary btn-lg" %>
+    </div>
   </section>
 </div>
   <div class="footer">
