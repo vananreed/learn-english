@@ -1,3 +1,6 @@
-<form action="/">
-  <input type="text" label="Name">
-</form>
+<%= simple_form_for @question, method: :post, url: questions_path do |f| %>
+  <%= f.input :name %>
+  <%= f.input :email %>
+  <%= f.input :content %>
+  <%= f.submit %>
+<% end %>

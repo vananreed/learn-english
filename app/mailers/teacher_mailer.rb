@@ -5,8 +5,9 @@ class TeacherMailer < ApplicationMailer
   #
   #   en.teacher_mailer.question.subject
   #
-  def question(email, content)
+  def question(email, client_name, content)
     @email = email
+    @name = client_name
     @content = content
     mail to: "abbyarend2@gmail.com"
   end
