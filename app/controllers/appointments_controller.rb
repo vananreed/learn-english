@@ -17,6 +17,7 @@ class AppointmentsController < ApplicationController
     else
       @student = Student.new
     end
+    @appointments = Appointment.all
     @appointment = Appointment.new
   end
 

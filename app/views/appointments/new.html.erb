@@ -1,15 +1,23 @@
 <div class="container">
 
   <%= simple_form_for @appointment do |f|%>
+  <%= f.input :date %>
   <%= f.input :time %>
   <%= f.input :duration %>
+  <%= f.submit %>
   <% end %>
 </div>
 
 <div class="container">
-  <%= month_calendar do |date| %>
-    <%= date %>
+<%= month_calendar events: @appointments do |date, appointments| %>
+  <%= date %>
+
+  <% appointments.each do |appointment| %>
+    <div>
+      <%= appointment %>
+    </div>
   <% end %>
+<% end %>
 </div>
 
 
