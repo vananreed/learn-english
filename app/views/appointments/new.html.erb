@@ -1,23 +1,32 @@
 <div class="container">
+  <div class="new-appointment-page-wrapper">
+    <div class="row">
 
-  <%= simple_form_for @appointment do |f|%>
-  <%= f.input :date %>
-  <%= f.input :time %>
-  <%= f.input :duration %>
-  <%= f.submit %>
-  <% end %>
-</div>
+      <div class="col-sm-12 col-md-6">
+        <%= month_calendar attribute: :time, events: @appointments do |date, appointments| %>
+          <%= date %>
 
-<div class="container">
-<%= month_calendar events: @appointments do |date, appointments| %>
-  <%= date %>
+          <% appointments.each do |appointment| %>
+            <div>
+              <%= appointment.time %>
+            </div>
+          <% end %>
+        <% end %>
 
-  <% appointments.each do |appointment| %>
-    <div>
-      <%= appointment %>
+      </div>
+      <div class="col-sm-12 col-md-6">
+        <%= simple_form_for @appointment do |f|%>
+          <%= f.input :date %>
+          <%= f.input :time %>
+          <%= f.input :duration %>
+          <%= f.input :topic, label: "What topics interest you most?" %>
+          <%= f.input :location, collection: ["Barcelona", "Starbucks", "Skype"] %>
+
+          <%= f.submit "Book Appointment", class: "btn btn-primary" %>
+        <% end %>
+
+      </div>
     </div>
-  <% end %>
-<% end %>
+  </div>
+  <%= link_to "Back", :back, class: "btn btn-primary" %>
 </div>
-
-

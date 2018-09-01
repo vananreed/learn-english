@@ -1,11 +1,20 @@
 <div class="container">
-<%= month_calendar events: @appointments do |date, appointments| %>
+<%= month_calendar attribute: :time, events: @appointments do |date, appointments| %>
   <%= date %>
 
   <% appointments.each do |appointment| %>
     <div>
-      <%= appointment %>
+      <%= appointment.time %>
     </div>
   <% end %>
 <% end %>
 </div>
+
+<% @appointments.each do |appointment| %>
+<%= appointment.id %>
+<%= appointment.student.user.full_name %>
+<%= appointment.date %>
+<%= appointment.time %>
+<%= appointment.duration %>
+<% end %>
+
