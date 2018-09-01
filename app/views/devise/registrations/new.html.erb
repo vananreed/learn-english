@@ -17,9 +17,16 @@
                   autofocus: true ,
                   input_html: { autocomplete: "email" }%>
       <%= simple_fields_for :student do |s| %>
-      <%= simple_fields_for :application do |a| %>
-      <%= a.input :native_language %>
-      <% end %>
+        <%= simple_fields_for :application do |a| %>
+          <%= a.input :native_language %>
+          <%= a.input :years_of_english %>
+          <%= a.input :past_experience %>
+          <%= a.input :learning_goals %>
+          <%= a.input :topics_of_interest %>
+          <%= a.input :age  %>
+          <%= a.input  :address %>
+          <%=  a.input :gender %>
+        <% end %>
       <% end %>
       <%= f.input :password,
                   required: true,
@@ -32,9 +39,9 @@
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Sign up" %>
+      <%= f.button :submit, "Continue to appointments", class: "btn btn-primary" %>
     </div>
   <% end %>
-
+  <div>Have you booked an appointment before?</div>
   <%= render "devise/shared/links" %>
 </div>
