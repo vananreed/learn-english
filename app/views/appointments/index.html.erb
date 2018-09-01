@@ -1,5 +1,4 @@
-<%= @appointments %>
-
+<div class="container">
 <%= month_calendar events: @appointments do |date, appointments| %>
   <%= date %>
 
@@ -9,3 +8,4 @@
     </div>
   <% end %>
 <% end %>
+</div>

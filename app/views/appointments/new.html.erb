@@ -5,10 +5,11 @@
   <%= f.input :duration %>
   <% end %>
 </div>
- <%= month_calendar do |date| %>
-  <%= date %>
-  <% end %>
 
-<%= week_calendar number_of_weeks: 2 do |date| %>
-  <%= date %>
-<% end %>
+<div class="container">
+  <%= month_calendar do |date| %>
+    <%= date %>
+  <% end %>
+</div>
+
+
