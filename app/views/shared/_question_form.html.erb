@@ -1,6 +1,6 @@
 <%= simple_form_for @question, method: :post, url: questions_path do |f| %>
-  <%= f.input :name %>
+  <%= f.input :name, label: "Your Name" %>
   <%= f.input :email %>
-  <%= f.input :content %>
-  <%= f.submit %>
+  <%= f.input :content, label: "Question" %>
+  <%= f.submit "Send Email", class: "btn btn-primary" %>
 <% end %>

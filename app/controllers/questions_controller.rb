@@ -5,7 +5,7 @@ class QuestionsController < ApplicationController
     @question = Question.new(question_params)
     @question.teacher = Teacher.find(1);
     @question.save!
-    # TeacherMailer.question(@question.email, @question.name, @question.content)
+    TeacherMailer.question(@question.email, @question.name, @question.content).deliver_now
     flash[:notice] = "Thank you, Email Sent :)"
     redirect_to root_path
   end
