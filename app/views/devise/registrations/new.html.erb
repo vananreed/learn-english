@@ -16,6 +16,11 @@
                   required: true,
                   autofocus: true ,
                   input_html: { autocomplete: "email" }%>
+      <%= simple_fields_for :student do |s| %>
+      <%= simple_fields_for :application do |a| %>
+      <%= a.input :native_language %>
+      <% end %>
+      <% end %>
       <%= f.input :password,
                   required: true,
                   hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
