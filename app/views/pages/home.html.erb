@@ -2,7 +2,11 @@
   <div class="container">
   <h1>Improve your Life, Learn English with Abby!</h1>
   <div class="subtitle">Practice the world's most widely spoken language with your very own private tutor</div>
-  <%= link_to "Book a lesson", new_appointment_path, class: "btn btn-primary btn-lg" %>
+  <% if user_signed_in? %>
+    <%= link_to "Book a lesson", new_appointment_path, class: "btn btn-primary btn-lg" %>
+  <% else %>
+    <%= link_to "Book a lesson", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+  <% end %>
   </div>
 </div>
 <div class="container">
@@ -52,7 +56,11 @@
       </div>
     </div>
       <div class="text-center">
-        <%= link_to "Book a Lesson", new_appointment_path, class: "btn btn-primary btn-lg" %>
+        <% if user_signed_in? %>
+          <%= link_to "Book a lesson", new_appointment_path, class: "btn btn-primary btn-lg" %>
+        <% else %>
+          <%= link_to "Book a lesson", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+        <% end %>
       </div>
   </section>
   <section class="how-it-works">
@@ -94,7 +102,11 @@
       </div>
     </div>
     <div class="text-center">
-      <%= link_to "Get started", new_appointment_path, class: "btn btn-primary btn-lg" %>
+      <% if user_signed_in? %>
+        <%= link_to "Book a lesson", new_appointment_path, class: "btn btn-primary btn-lg" %>
+      <% else %>
+        <%= link_to "Book a lesson", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+      <% end %>
     </div>
   </section>
 </div>
