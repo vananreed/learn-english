@@ -4,8 +4,10 @@ class AppointmentsController < ApplicationController
   def index
     if current_user.teacher
       @appointments = current_user.teacher.appointments
-    else
+    elsif current_user.student
       @appointments = current_user.student.appointments
+    else
+      @appointments = Appointment.all
     end
   end
 
