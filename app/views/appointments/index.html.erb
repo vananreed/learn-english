@@ -1,1 +1,11 @@
 <%= @appointments %>
+
+<%= month_calendar events: @appointments do |date, appointments| %>
+  <%= date %>
+
+  <% appointments.each do |appointment| %>
+    <div>
+      <%= appointment %>
+    </div>
+  <% end %>
+<% end %>

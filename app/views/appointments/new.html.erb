@@ -1,7 +1,14 @@
 <div class="container">
+
   <%= simple_form_for @appointment do |f|%>
-  <%= f.input :date %>
   <%= f.input :time %>
   <%= f.input :duration %>
   <% end %>
 </div>
+ <%= month_calendar do |date| %>
+  <%= date %>
+  <% end %>
+
+<%= week_calendar number_of_weeks: 2 do |date| %>
+  <%= date %>
+<% end %>
