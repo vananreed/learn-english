@@ -17,13 +17,14 @@ class AppointmentsController < ApplicationController
     else
       @student = Student.new
     end
+    @appointments = Appointment.all
     @appointment = Appointment.new
   end
 
   def create
     @appointment = Appointment.new(appointment_params)
     @appointment.student = current_user.student
-    @appointment.teacher = User.find_by(username: "teacherAbby")
+    @appointment.teacher = User.find_by(username: "teacherAbby").teacher
     if @appointment.save!
       redirect_to appointments_path
     else
