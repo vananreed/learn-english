@@ -8,6 +8,7 @@ class User < ApplicationRecord
   validates :username, uniqueness: true
   has_one :student
   has_one :teacher
+  accepts_nested_attributes_for :student
 
   def full_name
     first_name + ' ' + last_name

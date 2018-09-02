@@ -3,4 +3,5 @@ class Student < ApplicationRecord
   has_one :application
   validates :user, presence: true, uniqueness: true
   has_many :appointments
+  accepts_nested_attributes_for :application
 end
