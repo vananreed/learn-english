@@ -1,0 +1,45 @@
+<div class="container">
+  <h2>Tell Abby a Little About You</h2>
+
+  <%= simple_form_for @student do |s| %>
+    <div class="form-inputs">
+      <%= simple_fields_for :user do |f| %>
+      <%= f.input :first_name,
+                  required: true %>
+      <%= f.input :last_name,
+                  required: true %>
+      <%= f.input :username,
+                  required: true,
+                  hint: ("Choose a Username") %>
+      <%= f.input :email,
+                  required: true,
+                  input_html: { autocomplete: "email" }%>
+        <%= simple_fields_for :application do |a| %>
+          <%= a.input :native_language %>
+          <%= a.input :years_of_english %>
+          <%= a.input :past_experience %>
+          <%= a.input :learning_goals %>
+          <%= a.input :topics_of_interest %>
+          <%= a.input :age  %>
+          <%= a.input  :address %>
+          <%=  a.input :gender %>
+        <% end %>
+      <%= f.input :password,
+                  required: true,
+                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                  input_html: { autocomplete: "new-password" } %>
+
+      <%= f.input :password_confirmation,
+                  required: true,
+                  input_html: { autocomplete: "new-password" } %>
+    </div>
+      <% end %>
+
+    <div class="form-actions">
+      <%= s.button :submit, "Continue to appointments", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+  <div>Have you booked an appointment before?</div>
+  <%= link_to "Log In", new_user_session_path %>
+</div>
+

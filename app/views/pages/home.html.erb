@@ -5,7 +5,7 @@
   <% if user_signed_in? %>
     <%= link_to "Book a lesson", new_appointment_path, class: "btn btn-primary btn-lg" %>
   <% else %>
-    <%= link_to "Book a lesson", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+    <%= link_to "Book a lesson", new_student_path, class: "btn btn-primary btn-lg" %>
   <% end %>
   </div>
 </div>
@@ -59,7 +59,7 @@
         <% if user_signed_in? %>
           <%= link_to "Book a lesson", new_appointment_path, class: "btn btn-primary btn-lg" %>
         <% else %>
-          <%= link_to "Book a lesson", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+          <%= link_to "Book a lesson", new_student_path, class: "btn btn-primary btn-lg" %>
         <% end %>
       </div>
   </section>
@@ -105,7 +105,7 @@
       <% if user_signed_in? %>
         <%= link_to "Book a lesson", new_appointment_path, class: "btn btn-primary btn-lg" %>
       <% else %>
-        <%= link_to "Book a lesson", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+        <%= link_to "Book a lesson", new_student_path, class: "btn btn-primary btn-lg" %>
       <% end %>
     </div>
   </section>
