@@ -1,3 +1,6 @@
+<% if user_signed_in? %>
+  <%= render 'shared/navbar' if current_user.teacher %>
+<% end %>
 <div class="jumbotron">
   <div class="container">
   <h1>Improve your Life, Learn English with Abby!</h1>
