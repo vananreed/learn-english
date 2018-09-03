@@ -1,12 +1,12 @@
 <%= render 'shared/navbar' %>
   <h2 class="text-center">Your Schedule</h2>
 <div class="container">
-<%= month_calendar events: @appointments, attribute: :time do |date, appointments| %>
-  <%= date %>
+<%= month_calendar attribute: :time do |date| %>
+  <%= date.day %>
   <% @appointments.each do |appointment| %>
     <div>
       <% if appointment.date == date %>
-      <%= appointment.time %>
+      <div class="appointment-in-calendar"><%= appointment.time.strftime("%H:%M") %></div>
       <% end %>
     </div>
   <% end %>
