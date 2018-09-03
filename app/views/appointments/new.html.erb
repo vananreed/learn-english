@@ -18,9 +18,9 @@
         <%= simple_form_for @appointment do |f|%>
           <%= f.input :date %>
           <%= f.input :time %>
-          <%= f.input :duration %>
-          <%= f.input :topic, label: "What topics interest you most?" %>
-          <%= f.input :location, collection: ["Barcelona", "Starbucks", "Skype"] %>
+          <%= f.input :duration, label: "Duration (minutes)", collection: [20, 30, 45, 60, 90]%>
+          <%= f.input :topic, label: "What topic(s) do you want to cover?" %>
+          <%= f.input :location, collection: ["Barcelona", "Starbucks", "Skype"], hint: 'If you are not based in Barcelona, you must choose "Skype" :)' %>
 
           <%= f.submit "Book Appointment", class: "btn btn-primary" %>
         <% end %>

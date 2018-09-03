@@ -1,3 +1,5 @@
+<%= render 'shared/navbar' %>
+  <h2 class="text-center">Your Schedule</h2>
 <div class="container">
 <%= month_calendar attribute: :time, events: @appointments do |date, appointments| %>
   <%= date %>
@@ -9,12 +11,19 @@
   <% end %>
 <% end %>
 </div>
-
-<% @appointments.each do |appointment| %>
-<%= appointment.id %>
-<%= appointment.student.user.full_name %>
-<%= appointment.date %>
-<%= appointment.time %>
-<%= appointment.duration %>
-<% end %>
+<div class="container">
+  <h3>Appointments</h3>
+<div class="appointments-list">
+  <% @appointments.each do |appointment| %>
+  <div class="appointment-card">
+  <div><%= appointment.id %></div>
+  <div><%= appointment.student.user.full_name %></div>
+  <div><%= appointment.date %></div>
+  <div><%= appointment.time %></div>
+  <div>Location: <%= appointment.location %></div>
+  <div>Lesson time: <%= appointment.duration %> minutes</div>
+  </div>
+  <% end %>
+</div>
+</div>
 
