@@ -1,7 +1,7 @@
 <div class="container">
   <h2>Tell Abby a Little About You</h2>
 
-  <%= simple_form_for @student do |s| %>
+  <%= simple_form_for @student, url: students_path, method: :post do |s| %>
     <div class="form-inputs">
       <%= simple_fields_for :user do |f| %>
       <%= f.input :first_name,
