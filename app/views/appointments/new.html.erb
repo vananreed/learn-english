@@ -2,7 +2,7 @@
   <div class="new-appointment-page-wrapper">
     <% if current_user.student %>
     <% if current_user.student.appointments.presence %>
-    <div class="text-right"><%= link_to "My Appointments", appointments_path %></div>
+    <div class="text-right"><%= link_to "View my Appointments", appointments_path %></div>
     <% end %>
     <% end %>
     <h2 class="text-center">Schedule Your Lesson</h2>
