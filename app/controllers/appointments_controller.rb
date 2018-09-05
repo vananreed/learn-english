@@ -1,5 +1,4 @@
 class AppointmentsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:new]
 
   def index
     if current_user.teacher
