@@ -14,6 +14,7 @@ class StudentsController < ApplicationController
         @student.application = @application
       if @application.save!
         if @student.save!
+          sign_in(@user)
           redirect_to new_appointment_path
         else
           @user.destroy
