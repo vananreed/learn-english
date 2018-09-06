@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="new-appointment-page-wrapper">
+  <div class="new-appointment-page wrapper">
     <% if current_user.student %>
     <% if current_user.student.appointments.presence %>
     <div class="text-right"><%= link_to "View my Appointments", appointments_path %></div>
@@ -34,9 +34,10 @@
 
       </div>
     </div>
-  </div>
+
   <%= link_to "Back", :back, class: "btn btn-primary" %>
   <% if user_signed_in? %>
   <%= link_to "Log out", destroy_user_session_path, method: :delete %>
   <% end %>
+</div>
 </div>
