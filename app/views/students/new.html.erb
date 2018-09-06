@@ -1,6 +1,10 @@
 <div class="container">
+  <div class="new-student-form wrapper">
+  <div class="booked-appointment-before">
+  <div>Have you booked an appointment before?</div>
+  <%= link_to "Log In", new_user_session_path %>
+  </div>
   <h2>Tell Abby a Little About You</h2>
-
   <%= simple_form_for @student, url: students_path, method: :post do |s| %>
     <div class="form-inputs">
       <%= simple_fields_for :user do |f| %>
@@ -39,7 +43,7 @@
       <%= s.button :submit, "Continue to appointments", class: "btn btn-primary" %>
     </div>
   <% end %>
-  <div>Have you booked an appointment before?</div>
-  <%= link_to "Log In", new_user_session_path %>
+
+  </div>
 </div>
 
