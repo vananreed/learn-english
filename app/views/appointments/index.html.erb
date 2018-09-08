@@ -1,6 +1,9 @@
 <%= render 'shared/navbar' %>
 <div class="container">
   <div class="wrapper">
+    <div class="text-center"><%= link_to "Schedule New Lesson", new_appointment_path %></div>
+  </div>
+  <div class="wrapper">
     <h2 class="text-center">Your Schedule</h2>
     <%= month_calendar attribute: :time do |date| %>
     <%= date.day %>
