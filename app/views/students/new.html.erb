@@ -7,35 +7,40 @@
   <h2>Tell Abby a Little About You</h2>
   <%= simple_form_for @student, url: students_path, method: :post do |s| %>
     <div class="form-inputs">
+      <div class="row">
       <%= simple_fields_for :user do |f| %>
-      <%= f.input :first_name,
+      <div class="col-md-6 col-sm-12">
+        <%= f.input :first_name,
                   required: true %>
-      <%= f.input :last_name,
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <%= f.input :last_name,
                   required: true %>
-      <%= f.input :username,
-                  required: true,
-                  hint: ("Choose a Username") %>
-      <%= f.input :email,
+      </div>
+      <div class="col-md-6 col-sm-12"><%= f.input :email,
                   required: true,
                   input_html: { autocomplete: "email" }%>
+      </div>
         <%= simple_fields_for :application do |a| %>
-          <%= a.input :native_language %>
-          <%= a.input :years_of_english %>
-          <%= a.input :past_experience %>
-          <%= a.input :learning_goals %>
-          <%= a.input :topics_of_interest %>
-          <%= a.input :age  %>
-          <%= a.input  :address %>
-          <%=  a.input :gender %>
+          <div class="col-md-6 col-sm-12"><%= a.input :native_language %></div>
+          <div class="col-md-12"><%= a.input :years_of_english, collection: (0..20).to_a %></div>
+          <div class="col-md-12"><%= a.input :learning_goals %></div>
+          <div class="col-md-12"><%= a.label :topics_of_interest %>
+          <%= a.collection_check_boxes :topics_of_interest, [["Conversation", "Conversation"], ["Grammar", "Grammar"], ["Vocabulary", "Vocabulary"], ["Pronunciation", "Pronunciation"], ["Pop Culture", "Pop Culture"], ["Food/Culture", "Food/Culture"], ["Business", "Business"]], :first, :second %></div>
+          <div class="col-md-6 col-sm-12"><%= a.input :age, collection: (5..70).to_a  %></div>
+          <div class="col-md-6 col-sm-12"><%=  a.input :gender, collection: ["Male", "Female"] %></div>
+          <div class="col-md-12"><%= a.input  :address %></div>
         <% end %>
-      <%= f.input :password,
+      <div class="col-md-6 col-sm-12"><%= f.input :password,
                   required: true,
                   hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                  input_html: { autocomplete: "new-password" } %>
+                  hint: "To access your appointments!",
+                  input_html: { autocomplete: "new-password" } %></div>
 
-      <%= f.input :password_confirmation,
+      <div class="col-md-6 col-sm-12"><%= f.input :password_confirmation,
                   required: true,
-                  input_html: { autocomplete: "new-password" } %>
+                  input_html: { autocomplete: "new-password" } %></div>
+    </div>
     </div>
       <% end %>
 

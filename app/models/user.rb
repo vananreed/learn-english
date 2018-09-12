@@ -5,7 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :username, uniqueness: true
   has_one :student
   has_one :teacher
   accepts_nested_attributes_for :student
