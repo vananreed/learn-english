@@ -7,7 +7,7 @@ class QuestionsController < ApplicationController
     @question.save!
     TeacherMailer.question(@question.email, @question.name, @question.content).deliver_now
     flash[:notice] = "Thank you, Email Sent :)"
-    redirect_to root_path
+    redirect_back(fallback_location: root_path)
   end
 
   private

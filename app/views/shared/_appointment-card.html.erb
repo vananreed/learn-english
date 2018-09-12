@@ -1,0 +1,38 @@
+
+<div class="appointment-card">
+  <div class="appointment-card-id">Confirmation Number: <%= appointment.id %></div>
+  <% if current_user.teacher %>
+  <div class="appointment-card-student-name"><%= appointment.student.user.full_name %></div>
+  <div class="appointment-card-student-email">Student email: <%= appointment.student.user.email %></div>
+  <% else %>
+  <div class="appointment-card-student-name">Your Teacher: Abby Arend</div>
+  <div class="appointment-card-contact-abby">Contact Abby<a class="" data-toggle="modal" data-target="#appointmentcontactModal">
+    <i class="fas fa-envelope"></i>
+  </a></div>
+  <% end %>
+  <div class="appointment-card-appointment-date">Date: <%= appointment.date %> at <%= appointment.time.strftime('%H:%M') %></div>
+  <div class="appointment-card-appointment-time">Time: <%= appointment.time.strftime('%H:%M') %></div>
+  <div class="appointment-card-loaction">Location: <%= appointment.location %></div>
+  <div class="appointment-card-duration">Lesson time: <%= appointment.duration %> minutes</div>
+</div>
+
+
+
+<div class="modal fade" id="appointmentcontactModal" tabindex="-1" role="dialog" aria-labelledby="appointmentcontactModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="appointmentcontactModalLabel">Contact</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= render 'shared/question_form' %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
