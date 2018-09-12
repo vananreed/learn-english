@@ -9,6 +9,8 @@ class StudentsController < ApplicationController
     @user = User.new(user_params)
     if @user.save!
       @application = Application.new(application_params)
+      byebug
+      @application.topics_of_interest = params["application"]["topics_of_interest"][1..-1].join(", ")
       @student = Student.new
         @student.user = @user
         @student.application = @application
