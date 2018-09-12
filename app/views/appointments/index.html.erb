@@ -20,14 +20,7 @@
     <h3>Appointments</h3>
     <div class="appointments-list">
       <% @appointments.each do |appointment| %>
-      <div class="appointment-card">
-        <div><%= appointment.id %></div>
-        <div><%= appointment.student.user.full_name %></div>
-        <div><%= appointment.date %></div>
-        <div><%= appointment.time %></div>
-        <div>Location: <%= appointment.location %></div>
-        <div>Lesson time: <%= appointment.duration %> minutes</div>
-      </div>
+        <%= render 'shared/appointment-card', appointment: appointment %>
       <% end %>
     </div>
   </div>

@@ -25,8 +25,8 @@
           <div class="col-md-6 col-sm-12"><%= a.input :native_language %></div>
           <div class="col-md-12"><%= a.input :years_of_english, collection: (0..20).to_a %></div>
           <div class="col-md-12"><%= a.input :learning_goals %></div>
-          <div class="col-md-12"><%= a.label :topics_of_interest %>
-          <%= a.collection_check_boxes :topics_of_interest, [["Conversation", "Conversation"], ["Grammar", "Grammar"], ["Vocabulary", "Vocabulary"], ["Pronunciation", "Pronunciation"], ["Pop Culture", "Pop Culture"], ["Food/Culture", "Food/Culture"], ["Business", "Business"]], :first, :second %></div>
+          <div class="col-md-12"><%= a.label :topics_of_interest %></div>
+          <div class="col-md-12"><%= a.collection_check_boxes :topics_of_interest, [["Conversation", "Conversation"], ["Grammar", "Grammar"], ["Vocabulary", "Vocabulary"], ["Pronunciation", "Pronunciation"], ["Pop Culture", "Pop Culture"], ["Food/Culture", "Food/Culture"], ["Business", "Business"]], :first, :second, item_wrapper_class: 'checkbox_container' %></div>
           <div class="col-md-6 col-sm-12"><%= a.input :age, collection: (5..70).to_a  %></div>
           <div class="col-md-6 col-sm-12"><%=  a.input :gender, collection: ["Male", "Female"] %></div>
           <div class="col-md-12"><%= a.input  :address %></div>

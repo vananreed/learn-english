@@ -3,3 +3,13 @@
     display: flex;
   }
 }
+
+.checkbox_container {
+  display: inline-block;
+  vertical-align: -1px;
+  margin: 5px;
+ }
+
+ .checkbox_container input {
+  display: inline;
+}

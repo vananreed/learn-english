@@ -8,6 +8,7 @@ class AppointmentsController < ApplicationController
     else
       @appointments = Appointment.all
     end
+    @question = Question.new
   end
 
   def new
