@@ -1,6 +1,11 @@
 .simple-calendar {
-  max-width: 95%;
   height: auto;
   font-size: 13px;
 }
 
+
+@media (max-width: 480px) {
+  .simple-calendar {
+    font-size: 8px;
+  }
+}
