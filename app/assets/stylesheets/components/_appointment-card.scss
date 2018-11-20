@@ -6,3 +6,10 @@
   border-radius: 0 2px 2px 0;
   border-left: 4px solid orange;
 }
+
+@media (max-width: 480px) {
+  .appointment-card {
+    font-size: 12px;
+    height: 180px;
+  }
+}
